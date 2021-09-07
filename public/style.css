@@ -1,14 +1,27 @@
 /* public/style.css */
 
 body {
-    background: aqua;
+    margin: 0;
   }
+  body::after{}
   #root{
     display: flex;
     align-content: center;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-end;
+
+  }
+  #root::after{
+    content: "";
+    background: url(back.jpg);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
   }
 .View{
   display: flex;
@@ -16,10 +29,36 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   align-content: center;
+  width: 100%;
+  box-shadow: -5px -3px 7px 0px grey;
+  background: #636174;
+}
+.Content{
+  display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.CreateTeam{
+  display: flex;
+  flex-direction: column;
+  /* width: 50%; */
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
+  box-shadow: 0 0 7px 1px #84bae9;
+  padding: 2px 20px 20px 20px;
+  margin-top: 50px;
+  background: #083053;
+  color: aliceblue;
+  margin-top: 50px;
+
+}
+.team{
+  display: flex;
+  flex-direction: column;
 }
 .BannerIcon{
-  width: 10px;
-  height: 10px;
+  
 }
 .BannerIcon > img{
   width: 50px;

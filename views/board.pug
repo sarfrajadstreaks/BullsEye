@@ -1,0 +1,14 @@
+extends layout
+block layout-content
+  div.View
+    div.BannerName
+      h1 BullsEye
+    div.BannerIcon
+      image(src="eye.jfif")
+  div.Content
+    div.CreateTeam
+      h3 Welcome #{name}
+      form.team(action="createTeam", method="get") 
+        input#name(type="text", name="MemberName", placeholder="Enter your Name")
+        br
+        input(type="submit", value="Done")
