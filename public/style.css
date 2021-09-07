@@ -1,0 +1,27 @@
+/* public/style.css */
+
+body {
+    background: aqua;
+  }
+  #root{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+.View{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+}
+.BannerIcon{
+  width: 10px;
+  height: 10px;
+}
+.BannerIcon > img{
+  width: 50px;
+  height: 50px;
+}

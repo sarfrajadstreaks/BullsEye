@@ -1,0 +1,30 @@
+{
+  "name": "BullsEye",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "ui": "browser-sync start --config bs-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarfrajadstreaks/BullsEye.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarfrajadstreaks/BullsEye/issues"
+  },
+  "homepage": "https://github.com/sarfrajadstreaks/BullsEye#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
+  }
+}
