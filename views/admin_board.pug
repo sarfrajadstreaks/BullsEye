@@ -1,0 +1,42 @@
+extends layout
+block layout-content
+  div.View
+    div.BannerName
+      h1 BullsEye
+    div.BannerIcon
+      image(src="eye.jfif")
+  div.Content
+    div.CreateTeam
+      h3 Welcome #{teamName} Team
+      p Share below link to join the team.
+      p http://localhost:8000/add/#{teamId}?teamname=#{teamName}
+      div.AllMembers
+        div#playersList
+          div#Player
+        br
+        input#start(type="button", value="Start")  
+          
+  script.
+    var socket=io.connect("http://localhost:8000");
+    socket.emit("joined",{teamId:"#{teamId}",playerId:"#{playerId}"})
+    console.log("---------")
+    socket.on("update",function(data){
+      var sec="";
+      console.log("---------")
+      for(const d in data){
+        //sec+="<span>"+d+"</span>";
+        document.getElementById("Player").appendChild(span).innerText()
+      }
+      //document.getElementById("Player").remove();
+      //var node=document.createElement('div');
+      //node.setAttribute("id","Player")
+      //document.getElementById("playersList").appendChild(node)
+      //document.getElementById("Player").innerHTML=sec
+       
+    })
+
+    var btn=document.getElementById("start");
+    btn.addEventListener('click',function(){
+      socket.emit("start",{teamId:"#{teamId}"})
+    }) 
+    

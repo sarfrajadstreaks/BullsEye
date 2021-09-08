@@ -1,0 +1,19 @@
+extends layout
+block layout-content
+  div.View
+    div.BannerName
+      h1 BullsEye
+    div.BannerIcon
+      image(src="eye.jfif")
+  div.Content
+    div.CreateTeam
+      h3 Welcome #{name}
+      h3 Joined!! Waiting for admin to start the game
+  script.
+    var socket=io.connect("http://localhost:8000")
+    var teamId="#{detail.team_id}"
+    var playerId="#{detail.players_id"
+    var socket=io.connect("http://localhost:8000")
+    if(playerId.length==1){
+      socket.emit('join'+teamId, {playerJoined: user1@example.com});
+    }
