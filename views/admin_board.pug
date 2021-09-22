@@ -7,9 +7,9 @@ block layout-content
       image(src="eye.jfif")
   div.Content
     div.CreateTeam
-      h3 Welcome #{teamName} Team
+      h3 Welcome #{team_name} Team
       p Share below link to join the team.
-      p http://localhost:8000/add/#{teamId}?teamname=#{teamName}
+      p http://localhost:8000/add/#{team_id}?team_name=#{team_name}
       div.AllMembers
         div#playersList
           div#Player
@@ -18,21 +18,14 @@ block layout-content
           
   script.
     var socket=io.connect("http://localhost:8000");
-    socket.emit("joined",{teamId:"#{teamId}",playerId:"#{playerId}"})
-    console.log("---------")
+    socket.emit("joined",{team_id:"#{team_id}",player_id:"#{player_id}"});
+
     socket.on("update",function(data){
-      var sec="";
-      console.log("---------")
-      for(const d in data){
-        //sec+="<span>"+d+"</span>";
-        document.getElementById("Player").appendChild(span).innerText()
-      }
-      //document.getElementById("Player").remove();
-      //var node=document.createElement('div');
-      //node.setAttribute("id","Player")
-      //document.getElementById("playersList").appendChild(node)
-      //document.getElementById("Player").innerHTML=sec
-       
+      var node=document.getElementById("Player");
+      var newNode=document.createElement('span');
+      var player = document.createTextNode(' '+data.player_name);
+      newNode.appendChild(player);
+      node.appendChild(newNode);
     })
 
     var btn=document.getElementById("start");

@@ -9,8 +9,9 @@ block layout-content
     div.CreateTeam
       h3 Create your Team
       form.team(action="team", method="post") 
-        input#name(type="text", name="TeamName", placeholder="Enter your Team Name")
+        input#name(type="text", name="team_name", placeholder="Enter your Team Name")
         br
-        input#admin(type="text",name="AdminName", placeholder="Enter your name")
+        input#admin(type="text",name="player_name", placeholder="Enter your name")
         br
-        input#submit(type="submit", value="Done")    
+        input#submit(type="submit", value="Done")   
+        input(type="hidden", name="is_admin", value=true) 

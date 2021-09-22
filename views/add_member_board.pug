@@ -7,11 +7,14 @@ block layout-content
       image(src="eye.jfif")
   div.Content
     div.CreateTeam
-      h3 Welcome #{name}
+      h3 Welcome to #{team_name}
       form.team(action="/success", method="post") 
-        input#name(type="text", name="playerName", placeholder="Enter your Name")
-        input(type="hidden", name="teamId" value=teamid)
-        input(type="hidden", name="userId" value=userId)
+        input#name(type="text", name="player_name", placeholder="Enter your Name")
+        input(type="hidden", name="player_id" value=player_id)
+        input(type="hidden", name="team_id" value=team_id)
+        input(type="hidden", name="team_name" value=team_name)
+        
+       
         
         br
         input(type="submit", value="Add")

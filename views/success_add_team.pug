@@ -12,7 +12,7 @@ block layout-content
       h3#start
   script.
     var socket=io.connect("http://localhost:8000")
-    socket.emit("joined",{teamId:"#{teamId}",player_id:"#{userId}"})
+    socket.emit("joined",{team_id:"#{team_id}",player_id:"#{player_id}"})
     socket.on("starting",function(data){
       document.getElementById("start").innerHTML=data.msg
     })
