@@ -1,13 +1,14 @@
-const app=require('../www');
+const server=require('../www');
 const express=require('express')
 const socket = require("socket.io");
-//var router=app.Router();
+const crypto = require('crypto');
+
 var router=express.Router();
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
 const team_id_players_id=new Map();
 const player_details=new Map();
+const validity = 1000 * 60 * 60;
 router.get("/", (req, res) => {
+    console.log("getting....")
     var cook = req.cookies;
     if (Object.keys(cook).length === 0) {
         res.render("index", { title: "Home" })
@@ -123,4 +124,6 @@ io.on("connection", function (client) {
             io.to(detail.client_id).emit("update",{player_name:detail.player_name});
         });
     })
-})
+});
+
+module.exports=router
